@@ -59,14 +59,13 @@ export const CalendarPage = () => {
       <Navbar />
 
       <Calendar
-        culture='es'
+        culture='en'
         localizer={localizer}
         events={events}
         defaultView={lastView}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 'calc(100vh - 80px)' }}
-        messages={getMessagesES()}
+        style={{ height: 'calc(100vh - 80px)' }}        
         eventPropGetter={eventStyleGetter}
         components={{
           event: CalendarEvent
