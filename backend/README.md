@@ -8,6 +8,7 @@
 - express-validator
 - jsonwebtoken
 - mongoose
+- moment
 
 ## STACK
 - Javascript
