@@ -38,7 +38,8 @@ VITE_API_URL = http://localhost:4000/api/
 ## Backend Deployed en Railway
 
 ## Deployed DemoApp
-[CalendarApp](https://jutaga.github.io/auth/login) 
+- Click en "ViewDeployment"
+[CalendarApp](https://github.com/jutaga/CalendarApp/deployments/activity_log?environment=github-pages) 
 
 ## Status
 Completed
