@@ -28,21 +28,31 @@ export const useCalendarStore = () => {
 
             // crear evento
             const { data } = await calendarApi.post('/events', calendarEvent);
-            console.log(data);
             dispatch(onAddNewEvent({ ...calendarEvent, id: data.evento.id, user }))
 
         } catch (error) {
             console.log(error);
-            Swal.fire('Error adding event', error.response.data.msg, 'error');
+            Swal.fire('Error adding event', 'Not authorized', 'error');
         }
 
 
     }
 
-    const startDeletingEvent = () => {
+    const startDeletingEvent = async () => {
 
         //TODO: go to backend
-        dispatch(onDeleteEvent());
+        try {
+
+            await calendarApi.delete(`/events/${activeEvent.id}`);
+            dispatch(onDeleteEvent());
+
+        } catch (error) {
+            console.log(error);
+            Swal.fire('Error deleting event', 'Not authorized', 'error');
+
+        }
+
+
     }
 
     const startLoadingEvents = async () => {
